@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Task</title>
+</head>
+<body>
+    <h1>Edit Task</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        <label>Title:</label>
+        <input type="text" name="title" value="{{ task.title }}" required><br><br>
+
+        <label>Description:</label>
+        <textarea name="description">{{ task.description }}</textarea><br><br>
+
+        <label>Due Date:</label>
+        <input type="date" name="due_date" value="{{ task.due_date|date:'Y-m-d' }}"><br><br>
+
+        <label>Priority:</label>
+        <select name="priority">
+            <option value="H" {% if task.priority == "H" %}selected{% endif %}>High</option>
+            <option value="M" {% if task.priority == "M" %}selected{% endif %}>Medium</option>
+            <option value="L" {% if task.priority == "L" %}selected{% endif %}>Low</option>
+        </select><br><br>
+
+        <button type="submit">Update</button>
+        <a href="{% url 'task_list' %}">Cancel</a>
+    </form>
+</body>
+</html>

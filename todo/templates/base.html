@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Todo App{% endblock %}</title>
+
+    <!-- ✅ Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- ✅ Optional Styling for Better Look -->
+    <style>
+        body {
+            background-color: #f5f9ff;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .card {
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+            padding: 15px;
+        }
+
+        .task-complete {
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+
+        .priority-H {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .priority-M {
+            color: #f39c12;
+        }
+
+        .priority-L {
+            color: #3498db;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .btn {
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ✅ Page Container -->
+<div class="container">
+    {% block content %}
+    {% endblock %}
+</div>
+
+<!-- ✅ Bootstrap JS (Optional for interactive components) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
