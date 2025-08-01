@@ -4,7 +4,7 @@ services:
     env: python
     plan: free
     buildCommand: "./build.sh"
-    startCommand: "gunicorn your_project_name.wsgi:application"
+    startCommand: "gunicorn todo_project.wsgi:application"
     envVars:
       - key: DJANGO_SETTINGS_MODULE
         value: my_django_project.settings
